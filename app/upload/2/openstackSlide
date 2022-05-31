@@ -1,0 +1,51 @@
+- Openstack overview 
+	openstack là một dự án mã nguồn mở được sử dụng để xây dựng một hệ thống điện toán đám mây, cung cấp các dịch vụ dạng IaaS.
+- Benefit of openstack 
+	Xây dựng được một hệ thống điện toán đám mây cho riêng mình.
+	Là mã nguồn mở, có sự hỗ trợ của nhiều công ty lớn nên được cập nhật thường xuyên.
+	Tăng khả năng mở rộng và sử dụng tài nguyên
+- Core module
+	Openstack được xây dựng bởi nhiều dự án nhỏ hơn. Các dự án chính bao gồm: Identity (Keystone), image (Glance), networking (neutron), compute (nova), placement (placement), dashboard (horizon), block storage (cinder).
+
+- keystone: 
+	+ service: identity (proj & domain), resource (user & gr), assignment (role & role assign), token, catalog.
+		. region > domain > project > user groups & users.
+	+ 2 authentication method: passwd and token.
+	+ Token: UUID, PKI, PKIZ, Fernet. 
+	+ Flow: 
+	+ use curl or python call api keystone.
+- glance: 
+	+ struct: glance-api, glance-registry, database, storage repository.
+	+ statusFlow
+	+ files config.
+	+ metadata of image
+- nova:
+	+ struct: nova-api service, nova-api-metadata service, nova-compute service, nova-scheduler, nova-conductor
+	+ flavor, quotas, cell.
+	+ flow create VM
+	+ host aggreate va availability zone image
+	+ nova cli
+	+ cold vs live migrate.
+	+ nova scheduler : cơ chế filtering và weighting
+- neutron:
+	+ struct: API server,
+	+ provider and self-service
+	+ namespace
+	+ Linux bridge and ovs agent
+	+ metadata agent. dhcp agent
+	+ ha l3 agent , dhcp agent
+- cinder: 
+	+ cinder struct
+	+ cinder workflow
+	
+- horizon: 
+	+ cách cài đặt
+	
+	
+	
+- lý thuyết : kiến trúc, luồng hoạt động
+- cách cài đặt.
+- các tính năng.
+- Openstack distro.
+- deploy vào multinode.
+	

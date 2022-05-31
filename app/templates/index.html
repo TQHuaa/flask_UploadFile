@@ -1,0 +1,51 @@
+<!-- Store this code in 'index.html' file inside the 'templates' folder-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Index </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">					
+	</head>
+	<body>
+		<div >
+		<div >
+			<div class="header">
+				<h1 class="word">Index  </h1>
+				
+			</div></br></br></br>
+			<a href="{{ url_for('logout') }}" class="btn">Logout</a>
+				<h1 class="bottom">
+					Hi {{session.username}}!!</br></br> Welcome to the index page... </br>
+					{{msg}}				
+				</h1>
+				</br></br>
+				<form method=post enctype=multipart/form-data>
+				      <input type=file name=file>
+				      <input type=submit value=Upload>
+				</form>
+		</div>
+		</div>
+		<div>
+		   <table style="text-align: left;">
+			  <tr>
+			  	<th>ID</th>
+			  	<th>UID</th>
+			    <th>FileName</th>
+			    <th>Path</th>
+			    <th>Owner</th>
+			  </tr>
+			    {% for file in list_file %}
+			    <tr>
+			    <th> {{file[0]}} </th>
+			    <th> {{file[1]}} </th>
+			    <th>
+				<a href='file://{{file[3]}}' > {{file[2]}}  </a> 			    </th> 
+			    <th>{{file[3]}}</th>
+			    <th>{{file[4]}}</th>
+			    </tr>
+			    {% endfor %}
+			    </table>
+		</div>
+	</body>
+</html>
+

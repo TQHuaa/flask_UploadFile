@@ -1,0 +1,35 @@
+openstack la opensource minh co the su dung de build len va cung cap dich vu cho ben ngoai
+Phan loai: on-Premises, Iaas, PaaS (azure),< BaaS (firebase)>, SaaS(gg sheet, office365,...).
+
+OpenStack khoi xuong boi nasa va rackspace vao 2010, sau do rat nhieu cty to chuc ung ho.
+API cua EC-AWS tuong thich voi openstack
+co ... phien ban duoc cong bo
+Co the trien khai nhieu mo hinh cloud: Hybrid cloud, public cloud cung cap cloud ra ben ngoai, private cloud.
+
+Doi tuong su dung: cac nha cung cap dich vu, trung tam du lieu vi dung len kha ton tai nguyen
+
+Toong quan ve openstack: gom khoang ... casc dich vuj. Openstack la tap hop cua cac du an rieng le lai voi nhau. O day openstack cho minh kiem soat 3 thanh phan: may vat ly (bare metal), may ao, container (?). Phia tren minh co the su dung horizon hoac openstack sdk. 
+kurbernate forcus vao quan ly container. Co nhieu du an ket hop voi nhau de tang suc manh. 
+
+
+
+Cong dong openstack rat lon nen lam openstack rat tu tin. Co mot so ban phan phoi voi cac hang, binh thuong hay su dung ubuntu voi suse. Redhat thi no cung cap dv ho tro ky thuat -> khong han la free. \
+\
+
+Mot so project chinh: 
+- nova phu trach compute
+- keystone la dinh danh la tat ca cac thanh phan noi chuyen voi nhau phai duodwjc xac thuc.
+- block storage su dung de luu tru
+- horizon la dashboard
+- heat la tu dong hoa cap phat may ao va tu dong attack 1 so thanh phan
+- glance de quan ly image
+- neutron cung cap nen tang network cho openstack. la SDN tat ca define bang phan mem het.
+- ceilometer dung de tao thong tin billing. Giong nhu chay may ao tren gg, no tinh bang thoi gian chay may ao aay.
+
+Dac tinh chung : 
+- API : moi dich vu co 3 loai API
+	+ CLI truy cap su dung dong lenh
+	+ REST API truy cap thong qua giao thuc HTTP/HTTPS
+	+ GUI giao dien do hoa
+- Database: tat ca dich vu
+
