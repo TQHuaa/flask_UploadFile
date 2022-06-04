@@ -138,3 +138,4 @@ def connect():
 		password='a',
 		database='flaskTest')
 	return conn
+
