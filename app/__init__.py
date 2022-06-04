@@ -1,6 +1,6 @@
 # Store this code in 'app.py' file
 
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
 from werkzeug.utils import secure_filename
 import mariadb
 import os
@@ -50,7 +50,7 @@ def logout():
 
 @app.route('/register', methods =['GET', 'POST'])
 def register():
-	msg=''
+	msg=''	
 	if request.method == 'POST' and 'username' in request.form and 'password' in request.form  :
 		username = request.form['username']
 		password = request.form['password']
@@ -77,7 +77,7 @@ def register():
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_file():
 	msg = "login successfully" 
-	file_path= os.getcwd() + 'upload/'+str(uid)+'/'
+	file_path= '/app/static/upload/'+str(uid)+'/'
 	if not os.path.exists(file_path):
 		os.makedirs(file_path)
 	if request.method == 'POST':
@@ -125,6 +125,10 @@ def sync_database(file_path, file):
 	conn.close()
 	# return render_template('index.html', file=list_file)cur
 	return list_file
+
+@app.route('/app/static/upload/<uid>/<name>')
+def download_file(name, uid):
+    return send_from_directory('/app/static/upload/'+str(uid)+'/', name)
 
 def connect():
 	conn = mariadb.connect(
