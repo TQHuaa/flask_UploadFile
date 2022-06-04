@@ -39,7 +39,7 @@
 			    <th> {{file[0]}} </th>
 			    <th> {{file[1]}} </th>
 			    <th>
-				<a href='file://{{file[3]}}' > {{file[2]}}  </a> 			    </th> 
+				<a href='{{url_for('download_file', name=file[2], uid=file[1] )}}' > {{file[2]}}  </a> 			    </th> 
 			    <th>{{file[3]}}</th>
 			    <th>{{file[4]}}</th>
 			    </tr>
@@ -48,4 +48,3 @@
 		</div>
 	</body>
 </html>
-
